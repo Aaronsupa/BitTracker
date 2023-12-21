@@ -3,7 +3,6 @@ import requests
 from secret import KEY
 from datetime import datetime
 
-
 app = Flask(__name__)
 def fetch_data():
     url = "https://rest.coinapi.io/v1/exchangerate/BTC/USD"
@@ -13,8 +12,6 @@ def fetch_data():
     response = requests.get(url, headers=headers)
     return response.json()
 
-
-#'2023-12-20T17:18:36.0000000Z
 @app.route("/")
 def bitApp():
     txt = fetch_data()
